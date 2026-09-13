@@ -138,52 +138,52 @@ The processor core is a single-cycle implementation of the RV32I Base Integer IS
 
 ```mermaid
 flowchart LR
-    subgraph IF [Instruction Fetch]
-        PC[ProgramCounter]
-        IMEM[instructionMemory]
-        PC -->|pcRegister[31:0]| IMEM
+    subgraph IF ["Instruction Fetch"]
+        PC["ProgramCounter"]
+        IMEM["instructionMemory"]
+        PC -->|"pcRegister [31:0]"| IMEM
     end
 
-    subgraph ID [Decode & Control]
-        DEC[decoder]
-        CTRL[ControlLogic]
-        IMEM -->|instr[31:0]| DEC
-        DEC -->|opcodout[6:0]| CTRL
+    subgraph ID ["Decode & Control"]
+        DEC["decoder"]
+        CTRL["ControlLogic"]
+        IMEM -->|"instr [31:0]"| DEC
+        DEC -->|"opcodout [6:0]"| CTRL
     end
 
-    subgraph RF [Register File]
-        REG[RegFile (32x32)]
-        DEC -->|rs1, rs2, rd| REG
-        CTRL -->|reg_write| REG
+    subgraph RF ["Register File"]
+        REG["RegFile (32x32)"]
+        DEC -->|"rs1, rs2, rd"| REG
+        CTRL -->|"reg_write"| REG
     end
 
-    subgraph EX [Execution & ALU]
-        ALU_TOP[alu]
-        RI[RI_alu]
-        BA[bAlu]
+    subgraph EX ["Execution & ALU"]
+        ALU_TOP["alu"]
+        RI["RI_alu"]
+        BA["bAlu"]
         ALU_TOP -.-> RI
         ALU_TOP -.-> BA
-        REG -->|rs1out, rs2out| ALU_TOP
-        DEC -->|imm, func3, func7| ALU_TOP
-        PC -->|pcRegister| ALU_TOP
-        ALU_TOP -->|doesB (jump)| PC
-        DEC -->|imm| PC
+        REG -->|"rs1out, rs2out"| ALU_TOP
+        DEC -->|"imm, func3, func7"| ALU_TOP
+        PC -->|"pcRegister"| ALU_TOP
+        ALU_TOP -->|"doesB (jump)"| PC
+        DEC -->|"imm"| PC
     end
 
-    subgraph MEM [Memory Bridge]
-        BRIDGE[rv32i_axi_bridge]
-        ALU_TOP -->|mem_addr| BRIDGE
-        REG -->|mem_wdata| BRIDGE
-        CTRL -->|mem_read, mem_write| BRIDGE
-        BRIDGE -->|cpu_stall| PC
-        BRIDGE -->|cpu_stall| REG
+    subgraph MEM ["Memory Bridge"]
+        BRIDGE["rv32i_axi_bridge"]
+        ALU_TOP -->|"mem_addr"| BRIDGE
+        REG -->|"mem_wdata"| BRIDGE
+        CTRL -->|"mem_read, mem_write"| BRIDGE
+        BRIDGE -->|"cpu_stall"| PC
+        BRIDGE -->|"cpu_stall"| REG
     end
 
-    subgraph WB [Write-Back Mux]
+    subgraph WB ["Write-Back Mux"]
         MUX_WB{"mem_to_reg == 2'b01"}
-        BRIDGE -->|mem_rdata| MUX_WB
-        ALU_TOP -->|alu_out| MUX_WB
-        MUX_WB -->|rw| REG
+        BRIDGE -->|"mem_rdata"| MUX_WB
+        ALU_TOP -->|"alu_out"| MUX_WB
+        MUX_WB -->|"rw"| REG
     end
 ```
 
