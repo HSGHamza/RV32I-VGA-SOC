@@ -2,21 +2,19 @@
 
 module zybo_top (
     input  wire        clk,        // 125.0 MHz onboard oscillator (Pin K17)
-    input  wire [3:0]  sw,         // Slide switches: sw[0]=Reset (1=rst, 0=run), sw[1]=AI toggle
-    input  wire [3:0]  btn,        // Pushbuttons: btn[0]=L_UP, btn[1]=L_DN, btn[2]=R_UP, btn[3]=R_DN
+    input  wire        btn0,       // Reset button (Pin K18, active high)
 
     // User Status LEDs (Pins M14, M15, G14, D18)
     output wire [3:0]  led,
 
-    // VGA 1-bit Interface via Single Pmod Port JC (RGB111: 1 wire per channel, 8 colors)
-    // Red:   JC1 -> V15
-    // Green: JC2 -> W15
-    // Blue:  JC3 -> T11
-    // Hsync: JC7 -> W14
-    // Vsync: JC8 -> Y14
-    output wire        vga_r,
-    output wire        vga_g,
-    output wire        vga_b,
+    // Digilent Pmod VGA Interface (Pmod Ports JC & JD)
+    // Red: JC[3:0]   -> V15, W15, T11, T10
+    // Green: JC[7:4] -> W14, Y14, T12, U12
+    // Blue: JD[3:0]  -> T14, T15, P14, R14
+    // Hsync: JD[4]   -> U14, Vsync: JD[5] -> V12
+    output wire [3:0]  vga_r,
+    output wire [3:0]  vga_g,
+    output wire [3:0]  vga_b,
     output wire        vga_hs,
     output wire        vga_vs
 );
@@ -26,10 +24,9 @@ module zybo_top (
     // -------------------------------------------------------------------------
     reg [2:0] clk_cnt = 3'd0;
     reg       clk_25m_reg = 1'b0;
-    wire      rst_btn_or_sw = sw[0]; // Reset on switch 0: UP = Reset, DOWN = Run
 
-    always @(posedge clk or posedge rst_btn_or_sw) begin
-        if (rst_btn_or_sw) begin
+    always @(posedge clk or posedge btn0) begin
+        if (btn0) begin
             clk_cnt     <= 3'd0;
             clk_25m_reg <= 1'b0;
         end else begin
@@ -50,8 +47,8 @@ module zybo_top (
     // 2. Synchronized Reset Generation on 25 MHz domain
     // -------------------------------------------------------------------------
     reg [2:0] rst_sync = 3'b111;
-    always @(posedge clk_25m or posedge rst_btn_or_sw) begin
-        if (rst_btn_or_sw)
+    always @(posedge clk_25m or posedge btn0) begin
+        if (btn0)
             rst_sync <= 3'b111;
         else
             rst_sync <= {rst_sync[1:0], 1'b0};
@@ -99,8 +96,6 @@ module zybo_top (
     ) u_soc_top (
         .clk            (clk_25m),
         .reset          (sys_rst),
-        .btn            (btn),
-        .sw             (sw),
 
         .Hsync          (soc_hsync),
         .Vsync          (soc_vsync),
@@ -118,11 +113,11 @@ module zybo_top (
     );
 
     // -------------------------------------------------------------------------
-    // 5. VGA 1-bit (RGB111: 1-1-1) Output Mapping (Single Pmod JC)
+    // 5. Pmod VGA 4-bit DAC Output Mapping
     // -------------------------------------------------------------------------
-    assign vga_r  = soc_red[7];
-    assign vga_g  = soc_green[7];
-    assign vga_b  = soc_blue[7];
+    assign vga_r  = soc_red[7:4];
+    assign vga_g  = soc_green[7:4];
+    assign vga_b  = soc_blue[7:4];
     assign vga_hs = soc_hsync;
     assign vga_vs = soc_vsync;
 

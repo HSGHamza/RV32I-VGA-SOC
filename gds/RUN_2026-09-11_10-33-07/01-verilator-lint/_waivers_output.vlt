@@ -1,0 +1,971 @@
+// DESCRIPTION: Verilator output: Waivers generated with --waiver-output
+
+`verilator_config
+
+// Below are suggested waivers. You have three options:
+//   1. Fix the reason for the linter warning in the Verilog sources
+//   2. Keep the waiver permanently if you are sure it is okay
+//   3. Keep the waiver temporarily to suppress the output
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/runs/RUN_2026-09-11_10-33-07/tmp/e7c52e6b4f544d30b9c5e1972b2e25ee.bb.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/src/ControlLogic.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/src/Datapath.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/src/ProgramCounter.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/src/RI_alu.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/src/RegFile.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule TIMESCALEMOD -file "*/home/cl4/Desktop/spm/src/alu.v" -match "Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)*"
+
+// lint_off -rule WIDTHEXPAND -file "*/home/cl4/Desktop/spm/src/RI_alu.v" -match "Operator ASSIGN expects 32 bits on the Assign RHS, but Assign RHS's LTS generates 1 bits.*"
+
+// lint_off -rule WIDTHEXPAND -file "*/home/cl4/Desktop/spm/src/RI_alu.v" -match "Operator ASSIGN expects 32 bits on the Assign RHS, but Assign RHS's LT generates 1 bits.*"
+
+// lint_off -rule WIDTHTRUNC -file "*/home/cl4/Desktop/spm/src/vga_registers.v" -match "Operator ASSIGN expects 19 bits on the Assign RHS, but Assign RHS's SHIFTR generates 32 bits.*"
+
+// lint_off -rule WIDTHTRUNC -file "*/home/cl4/Desktop/spm/src/vga_registers.v" -match "Operator ASSIGN expects 19 bits on the Assign RHS, but Assign RHS's SHIFTR generates 32 bits.*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/Datapath.v" -match "Signal is not used: 'alu_src'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/Datapath.v" -match "Signal is not used: 'branch'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/Datapath.v" -match "Signal is not used: 'jump_ctrl'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/Datapath.v" -match "Signal is not used: 'alu_op'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/axi_data_memory.v" -match "Bits of signal are not used: 'wr_word_idx'[31:6]*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/rv32i_axi_bridge.v" -match "Signal is not used: 'm_axi_bresp'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/rv32i_axi_bridge.v" -match "Signal is not used: 'm_axi_rresp'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/vga_registers.v" -match "Bits of signal are not used: 'vga_fb_addr'[1:0]*"
+
+// lint_off -rule PROCASSINIT -file "*/home/cl4/Desktop/spm/src/RegFile.v" -match "Procedural assignment to declaration with initial value: 'x0'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/instructionMemory.v" -match "Signal is not used: 'clk'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/instructionMemory.v" -match "Signal is not used: 'reset'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/instructionMemory.v" -match "Bits of signal are not used: 'address'[1:0]*"
+
+// lint_off -rule UNDRIVEN -file "*/home/cl4/Desktop/spm/src/instructionMemory.v" -match "Signal is not driven: 'memory'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/pixel_addr_gen.v" -match "Bits of signal are not used: 'V_count'[15:12]*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/rgb_output.v" -match "Bits of signal are not used: 'vga_data'[31:24]*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/RI_alu.v" -match "Signal is not used: 'clk'*"
+
+// lint_off -rule UNUSEDSIGNAL -file "*/home/cl4/Desktop/spm/src/bAlu.v" -match "Signal is not used: 'clk'*"
+
+// lint_off -rule UNSIGNED -file "*/home/cl4/Desktop/spm/src/axi_decoder.v" -match "Comparison is constant due to unsigned arithmetic*"
+
+// lint_off -rule UNSIGNED -file "*/home/cl4/Desktop/spm/src/axi_data_memory.v" -match "Comparison is constant due to unsigned arithmetic*"
+
+// lint_off -rule UNSIGNED -file "*/home/cl4/Desktop/spm/src/axi_data_memory.v" -match "Comparison is constant due to unsigned arithmetic*"
+
+// lint_off -rule CASEINCOMPLETE -file "*/home/cl4/Desktop/spm/src/rv32i_axi_bridge.v" -match "Case values incompletely covered (example pattern 0x5)*"
+
+// lint_off -rule CASEINCOMPLETE -file "*/home/cl4/Desktop/spm/src/axi_decoder.v" -match "Case values incompletely covered (example pattern 0x5)*"
+
+// lint_off -rule CASEINCOMPLETE -file "*/home/cl4/Desktop/spm/src/axi_decoder.v" -match "Case values incompletely covered (example pattern 0x5)*"
+
+// lint_off -rule CASEINCOMPLETE -file "*/home/cl4/Desktop/spm/src/vga_registers.v" -match "Case values incompletely covered (example pattern 0x3)*"
+
+// lint_off -rule SYNCASYNCNET -file "*/home/cl4/Desktop/spm/src/soc_top.v" -match "Signal flopped as both synchronous and async: 'reset'*"
+
