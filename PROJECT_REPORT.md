@@ -43,7 +43,6 @@
    - [Pmod RGB111 Physical Interface](#pmod-rgb111-physical-interface)
 7. [Bare-Metal Application: Ping Pong Game](#7-bare-metal-application-ping-pong-game)
    - [Software Architecture & Control Flow](#software-architecture--control-flow)
-   - [Collision Physics & Ball Vector Kinematics](#collision-physics--ball-vector-kinematics)
    - [Flicker-Free Rendering via Shadow Coordinates](#flicker-free-rendering-via-shadow-coordinates)
    - [Hardware User Input & Autonomous AI Opponent](#hardware-user-input--autonomous-ai-opponent)
 8. [Basic Verification & Directed Testbenches](#8-basic-verification--directed-testbenches)
@@ -351,7 +350,9 @@ Rendering a native 640x480 resolution at 32 bits per pixel requires 1,228,800 by
 To overcome this limitation, the system implements an internal resolution of **160 x 120 pixels** coupled with a dedicated hardware scaling engine in [`rtl/vga/pixel_addr_gen.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/vga/pixel_addr_gen.v):
 1. **Mathematical Transformation**: The horizontal counter (`H_count`) and vertical counter (`V_count`) are bit-shifted right by 2 (`H_count >> 2`, `V_count >> 2`), dividing screen coordinates by 4.
 2. **Raster Address Formulation**:
-   $$\text{Raster Address} = (\text{V\_count}[9:2] \times 160) + \text{H\_count}[9:2]$$
+   ```
+   Raster Address = (V_count[9:2] * 160) + H_count[9:2]
+   ```
 3. **Hardware Efficiency**: Every pixel stored in the framebuffer is automatically expanded into a crisp 4x4 block of physical pixels on the VGA monitor, reducing memory requirements by **16x** with zero CPU scaling overhead.
 
 ### Dual-Port Video Framebuffer Architecture
@@ -359,7 +360,7 @@ To overcome this limitation, the system implements an internal resolution of **1
 [`rtl/vga/framebuffer_sram.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/vga/framebuffer_sram.v) provides a true dual-port memory architecture:
 - **Port A (CPU AXI Write Port)**: Operates through [`vga_registers.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/vga/vga_registers.v). The processor can write pixel colors (`0x00RRGGBB`) asynchronously relative to raster scanning.
 - **Port B (VGA Controller Read Port)**: Dedicated to the video raster engine. Driven by `fb_addr` from the pixel address generator, it streams pixel color words to the display pipeline continuously.
-- **Memory Footprint**: $160 \times 120 = 19,200 \text{ words} = 76,800 \text{ bytes}$. On the Xilinx XC7Z010 FPGA, this consumes only **17 Block RAMs (36Kb each)** out of 60 available, leaving **71.7% of on-chip RAM free**.
+- **Memory Footprint**: 160 * 120 = 19,200 words = 76,800 bytes. On the Xilinx XC7Z010 FPGA, this consumes only **17 Block RAMs (36Kb each)** out of 60 available, leaving **71.7% of on-chip RAM free**.
 
 ### Memory-Mapped I/O & Control Registers
 
@@ -440,14 +441,6 @@ To validate the processor and graphics pipeline under real dynamic workloads, a 
 +-----------------------------+
 ```
 
-### Collision Physics & Ball Vector Kinematics
-
-1. **Velocity Kinematics**: In each frame cycle, the ball coordinates update according to signed velocity registers:
-   $$\text{ball\_x} \leftarrow \text{ball\_x} + \text{vel\_x}, \quad \text{ball\_y} \leftarrow \text{ball\_y} + \text{vel\_y}$$
-2. **Ceiling and Floor Bounces**: If $\text{ball\_y} \le 3$ or $\text{ball\_y} \ge 115$, the vertical velocity vector reverses: $\text{vel\_y} \leftarrow -\text{vel\_y}$.
-3. **Paddle Collision Detection**: When the ball enters the horizontal boundary of the left paddle ($X \le 8$) or right paddle ($X \ge 150$), the software evaluates whether $\text{ball\_y}$ falls within the vertical span of the paddle ($[\text{paddle\_y}, \text{paddle\_y} + 16]$). If true, horizontal velocity reverses ($\text{vel\_x} \leftarrow -\text{vel\_x}$).
-4. **Goal Scoring**: If the ball escapes past a paddle boundary, it resets to screen center $(80, 60)$ and reverses direction toward the scoring player.
-
 ### Flicker-Free Rendering via Shadow Coordinates
 
 Clearing all 19,200 words of the framebuffer each frame would require over 100,000 CPU clock cycles, severely bottlenecking software frame rates and introducing severe visible screen flicker.
@@ -478,7 +471,7 @@ The system reset testbench ([`tb/soc_top_tb.sv`](file:///c:/Users/HSG/Desktop/rv
 1. Program Counter immediately resets to vector `0x0000_0000`.
 2. All Register File locations are cleared.
 3. The AXI master bridge enters the `IDLE` state.
-4. VGA timing counters reset to $(0, 0)$.
+4. VGA timing counters reset to (0, 0).
 
 ![Reset Test Waveform](screensshots/basic%20verification/Reset%20Test.png)
 *Figure 8.1: System reset simulation waveform demonstrating clean reset de-assertion, PC initialization, and pipeline state machine alignment.*
