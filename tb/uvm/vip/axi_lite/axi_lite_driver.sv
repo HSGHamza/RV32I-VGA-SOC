@@ -63,7 +63,7 @@ class axi_lite_driver extends uvm_driver #(axi_lite_item);
     @(posedge vif.clk);
     vif.awaddr  <= item.addr;
     vif.awvalid <= 1'b1;
-    vif.wdata   <= item.data;
+    vif.wdata   <= (item.wdata != 32'h0) ? item.wdata : item.data;
     vif.wstrb   <= item.strb;
     vif.wvalid  <= 1'b1;
     vif.bready  <= 1'b1;

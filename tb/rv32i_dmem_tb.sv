@@ -259,10 +259,7 @@ module rv32i_dmem_tb;
     // Helper task to program CPU instruction memory
     // -------------------------------------------------------------------------
     task load_instr(input int word_index, input logic [31:0] instr);
-        u_cpu.instr_mem.memory[word_index*4 + 0] = instr[7:0];
-        u_cpu.instr_mem.memory[word_index*4 + 1] = instr[15:8];
-        u_cpu.instr_mem.memory[word_index*4 + 2] = instr[23:16];
-        u_cpu.instr_mem.memory[word_index*4 + 3] = instr[31:24];
+        u_cpu.instr_mem.memory[word_index] = instr;
     endtask
 
     // -------------------------------------------------------------------------
@@ -319,7 +316,7 @@ module rv32i_dmem_tb;
         load_instr(11, 32'h0000_0063);
 
         #100;
-        @(posedge clk);
+        @(negedge clk);
         reset = 0;
         $display("[INFO] Reset released. Executing RV32I code...");
 

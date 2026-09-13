@@ -7,6 +7,7 @@ class axi_lite_item extends uvm_sequence_item;
   rand axi_lite_types_pkg::axi_op_e      op;
   rand bit [31:0]                        addr;
   rand bit [31:0]                        data;
+  rand bit [31:0]                        wdata;
   rand bit [3:0]                         strb;
   rand int unsigned                      pre_delay;
   rand axi_lite_types_pkg::axi_region_e  target_region;
@@ -18,6 +19,7 @@ class axi_lite_item extends uvm_sequence_item;
     `uvm_field_enum(axi_lite_types_pkg::axi_op_e, op, UVM_ALL_ON)
     `uvm_field_int(addr, UVM_ALL_ON | UVM_HEX)
     `uvm_field_int(data, UVM_ALL_ON | UVM_HEX)
+        `uvm_field_int(wdata, UVM_ALL_ON | UVM_HEX) 
     `uvm_field_int(strb, UVM_ALL_ON | UVM_BIN)
     `uvm_field_int(pre_delay, UVM_ALL_ON | UVM_DEC)
     `uvm_field_enum(axi_lite_types_pkg::axi_region_e, target_region, UVM_ALL_ON)
@@ -57,6 +59,7 @@ class axi_lite_item extends uvm_sequence_item;
     op = axi_lite_types_pkg::AXI_WRITE;
     addr = 32'h0;
     data = 32'h0;
+        wdata = 32'h0; 
     strb = 4'hF;
     pre_delay = 0;
     target_region = axi_lite_types_pkg::REGION_DATA_MEM;

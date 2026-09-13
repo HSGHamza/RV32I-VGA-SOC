@@ -146,7 +146,7 @@ sim:
 		rtl/vga/*.v \
 		rtl/soc_top.v \
 		tb/soc_top_tb.sv
-	vsim -c -do "run 200us; quit -f" soc_top_tb
+	vsim -c -do "run 60ms; quit -f" soc_top_tb
 
 # -----------------------------------------------------------------------------
 # UVM Verification Suite
@@ -154,19 +154,27 @@ sim:
 UVM_SRCS := \
 	rtl/bus/axi_decoder.v \
 	rtl/bus/axi_data_memory.v \
+	rtl/vga/vga_timing.v \
+	rtl/vga/pixel_addr_gen.v \
+	rtl/vga/rgb_output.v \
+	rtl/vga/vga_controller.v \
 	rtl/vga/vga_registers.v \
 	rtl/vga/framebuffer_sram.v \
 	tb/uvm/vip/axi_lite/axi_lite_types.sv \
 	tb/uvm/vip/axi_lite/axi_lite_if.sv \
 	tb/uvm/vip/axi_lite/axi_lite_pkg.sv \
-	tb/uvm/env/axi_decoder_env_pkg.sv \
-	tb/uvm/tests/axi_decoder_test_pkg.sv \
+	tb/uvm/vip/vga/vga_if.sv \
+	tb/uvm/vip/vga/vga_pkg.sv \
+	tb/uvm/env/vga_assertions.sv \
+	tb/uvm/env/vga_env_pkg.sv \
+	tb/uvm/tests/vga_test_pkg.sv \
 	tb/uvm/tb_top.sv
 
 UVM_INCDIRS := \
 	+incdir+rtl/bus \
 	+incdir+rtl/vga \
 	+incdir+tb/uvm/vip/axi_lite \
+	+incdir+tb/uvm/vip/vga \
 	+incdir+tb/uvm/env \
 	+incdir+tb/uvm/tests
 
@@ -175,21 +183,21 @@ uvm_compile:
 	vlib work
 	vlog -sv $(UVM_INCDIRS) $(UVM_SRCS)
 
-uvm_sanity: uvm_compile
-	vsim -c -do "run -all; quit -f" +UVM_TESTNAME=axi_decoder_sanity_test tb_top
+uvm_framebuffer: uvm_compile
+	vsim -c -do "run -all; quit -f" +UVM_TESTNAME=vga_framebuffer_test tb_top
 
-uvm_unmapped: uvm_compile
-	vsim -c -do "run -all; quit -f" +UVM_TESTNAME=axi_decoder_unmapped_test tb_top
+uvm_sync: uvm_compile
+	vsim -c -do "run -all; quit -f" +UVM_TESTNAME=vga_sync_test tb_top
 
-uvm_random: uvm_compile
-	vsim -c -do "run -all; quit -f" +UVM_TESTNAME=axi_decoder_random_test tb_top
+uvm_display_toggle: uvm_compile
+	vsim -c -do "run -all; quit -f" +UVM_TESTNAME=vga_display_toggle_test tb_top
 
-uvm_concurrent: uvm_compile
-	vsim -c -do "run -all; quit -f" +UVM_TESTNAME=axi_decoder_concurrent_test tb_top
+uvm_invalid: uvm_compile
+	vsim -c -do "run -all; quit -f" +UVM_TESTNAME=vga_invalid_access_test tb_top
 
-uvm_all: uvm_compile uvm_sanity uvm_unmapped uvm_random uvm_concurrent
+uvm_all: uvm_compile uvm_framebuffer uvm_sync uvm_display_toggle uvm_invalid
 	@echo "========================================================================"
-	@echo "  ALL UVM VERIFICATION TESTS COMPLETED SUCCESSFULLY!                    "
+	@echo "  ALL VGA UVM VERIFICATION TESTS COMPLETED SUCCESSFULLY!                "
 	@echo "========================================================================"
 
 clean:

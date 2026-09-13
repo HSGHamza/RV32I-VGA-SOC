@@ -1,7 +1,15 @@
 `timescale 1ns / 1ps
 
 module vga_controller #(
-    parameter PIXEL_SCALE = 1
+    parameter PIXEL_SCALE = 1,
+    parameter H_VISIBLE = 640,
+    parameter H_FRONT   = 16,
+    parameter H_SYNC    = 96,
+    parameter H_BACK    = 48,
+    parameter V_VISIBLE = 480,
+    parameter V_FRONT   = 10,
+    parameter V_SYNC    = 2,
+    parameter V_BACK    = 33
 )(
     input  wire        clk,
     input  wire        rst,
@@ -33,7 +41,16 @@ module vga_controller #(
     assign vga_fb_req   = raw_video_on && display_enable;
 
     // 1. VGA Timing Generator
-    vga_timing u_vga_timing (
+    vga_timing #(
+        .H_VISIBLE(H_VISIBLE),
+        .H_FRONT(H_FRONT),
+        .H_SYNC(H_SYNC),
+        .H_BACK(H_BACK),
+        .V_VISIBLE(V_VISIBLE),
+        .V_FRONT(V_FRONT),
+        .V_SYNC(V_SYNC),
+        .V_BACK(V_BACK)
+    ) u_vga_timing (
         .clk      (clk),
         .rst      (rst),
         .H_count  (H_count),

@@ -6,6 +6,7 @@ class axi_lite_monitor extends uvm_monitor;
 
   virtual axi_lite_if vif;
   uvm_analysis_port #(axi_lite_item) item_ap;
+   uvm_analysis_port #(axi_lite_item) ap; 
 
   function new(string name = "axi_lite_monitor", uvm_component parent = null);
     super.new(name, parent);
@@ -14,6 +15,7 @@ class axi_lite_monitor extends uvm_monitor;
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     item_ap = new("item_ap", this);
+       ap      = item_ap;
     if (!uvm_config_db#(virtual axi_lite_if)::get(this, "", "vif", vif)) begin
       `uvm_fatal("NO_VIF", "Virtual interface not found in uvm_config_db for axi_lite_monitor")
     end
@@ -64,6 +66,7 @@ class axi_lite_monitor extends uvm_monitor;
         item.op    = axi_lite_types_pkg::AXI_WRITE;
         item.addr  = captured_addr;
         item.data  = captured_data;
+          item.wdata = captured_data;
         item.strb  = captured_strb;
         item.resp  = axi_lite_types_pkg::axi_resp_e'(vif.bresp);
         classify_region(item);
