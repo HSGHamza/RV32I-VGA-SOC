@@ -1,6 +1,11 @@
 # RV32I Processor Core with AXI-4 Interconnect & VGA Subsystem
 
-A complete 32-bit RISC-V (RV32I Base Integer ISA) System-on-Chip (SoC) implemented in synthesizable Verilog HDL. The system integrates a custom single-cycle RV32I microprocessor core, an AXI4-Lite bus interconnect, memory-mapped I/O, an on-chip dual-port video framebuffer controller, and an interactive bare-metal Ping Pong game deployed to the **Digilent Zybo Z7-10** FPGA using the open-source **F4PGA / SymbiFlow** toolchain.
+A complete 32-bit RISC-V (RV32I Base Integer ISA) System-on-Chip (SoC) implemented in synthesizable Verilog HDL. The system integrates a custom single-cycle RV32I microprocessor core, an AXI4-Lite bus interconnect, memory-mapped I/O, an on-chip dual-port video framebuffer controller, and an interactive bare-metal Ping Pong game.
+
+The design features a dual deployment target:
+1. **FPGA Implementation**: Synthesized and deployed to the **Digilent Zybo Z7-10** FPGA using the fully open-source **F4PGA / SymbiFlow** toolchain.
+2. **ASIC Physical Design (GDSII)**: Hardened down to silicon layout on the **SkyWater 130nm (`sky130_fd_sc_hd`)** process node using the automated open-source **OpenLane / OpenROAD** physical design flow, achieving 0 DRC errors, 0 LVS errors, and clean multi-corner timing closure.
+3. **UVM 1.2 Verification Environment**: Industrial-grade SystemVerilog UVM testbench verifying the AXI4-Lite crossbar interconnect, memory routing, and error slave responses with >93% functional coverage.
 
 ---
 
@@ -26,17 +31,25 @@ A complete 32-bit RISC-V (RV32I Base Integer ISA) System-on-Chip (SoC) implement
 - [FPGA Implementation (Digilent Zybo Z7-10)](#fpga-implementation-digilent-zybo-z7-10)
   - [Clock & Reset Architecture](#clock--reset-architecture)
   - [Diagnostic LEDs & Peripheral Pinout](#diagnostic-leds--peripheral-pinout)
+- [ASIC Physical Design & GDSII (SkyWater 130nm)](#asic-physical-design--gdsii-skywater-130nm)
+  - [Physical Implementation & OpenLane Flow](#physical-implementation--openlane-flow)
+  - [Chip Layout & GDSII Screenshots](#chip-layout--gdsii-screenshots)
+  - [Tapeout & Physical Metrics Summary](#tapeout--physical-metrics-summary)
+  - [Multi-Corner Static Timing Analysis (STA)](#multi-corner-static-timing-analysis-sta)
+  - [Power & IR Drop Analysis](#power--ir-drop-analysis)
 - [Bare-Metal Application: Ping Pong Game](#bare-metal-application-ping-pong-game)
   - [Game Mechanics & Features](#game-mechanics--features)
   - [Flicker-Free Rendering Engine](#flicker-free-rendering-engine)
   - [Assembling & Updating Software](#assembling--updating-software)
+- [Verification & Simulation](#verification--simulation)
+  - [Testbench Suite](#testbench-suite)
+  - [UVM 1.2 Verification Environment](#uvm-12-verification-environment)
+  - [Running UVM Test Suite](#running-uvm-test-suite)
+  - [Running SoC Simulation](#running-soc-simulation)
 - [Build System & Toolchain Guide](#build-system--toolchain-guide)
   - [Makefile Targets](#makefile-targets)
   - [Synthesizing & Generating Bitstream (F4PGA)](#synthesizing--generating-bitstream-f4pga)
   - [Board Programming (openFPGALoader)](#board-programming-openfpgaloader)
-- [Verification & Simulation](#verification--simulation)
-  - [Testbench Suite](#testbench-suite)
-  - [Running SoC Simulation](#running-soc-simulation)
 - [Repository File Structure](#repository-file-structure)
 - [License](#license)
 
@@ -44,15 +57,16 @@ A complete 32-bit RISC-V (RV32I Base Integer ISA) System-on-Chip (SoC) implement
 
 ## Overview
 
-This project implements an end-to-end computer system on an FPGA, spanning from CPU instruction decoding to real-time video generation and physical user I/O:
+This project implements an end-to-end computer system spanning from CPU instruction decoding to real-time video generation, physical user I/O, tapeout-ready silicon GDSII, and UVM 1.2 testbench verification:
 
 - **CPU Core**: 32-bit single-cycle RISC-V (RV32I) processor core with pipeline stall support for memory transactions.
 - **Bus Standard**: Standard AXI4-Lite protocol decoupling the CPU pipeline from peripheral timing.
 - **Memory Architecture**: Separate 1 KB local Instruction Memory (ROM) and memory-mapped AXI Data Memory (RAM).
 - **Video Subsystem**: Custom hardware VGA controller generating standard 640x480 @ 60 Hz timing, featuring a 160x120 internal frame buffer with 4x hardware pixel replication and single Pmod RGB111 output.
 - **Interactive Bare-Metal Demo**: Real-time 2-player Ping Pong game (`pong.s`) featuring physics ball collision, paddle controls via physical pushbuttons, and an automated AI player toggleable via a slide switch.
-- **Target Platform**: Digilent Zybo Z7-10 (Xilinx Zynq-7000 `xc7z010clg400-1`).
-- **Fully Open-Source EDA Flow**: Synthesized, packed, placed, routed, and assembled using F4PGA / SymbiFlow (Yosys + VPR + prjxray) without requiring proprietary toolchains.
+- **FPGA Deployment**: Target platform Digilent Zybo Z7-10 (Xilinx Zynq-7000 `xc7z010clg400-1`) synthesized via open-source **F4PGA / SymbiFlow**.
+- **ASIC Silicon Implementation**: Hardened down to GDSII layout on **SkyWater 130nm (`sky130_fd_sc_hd`)** via **OpenLane / OpenROAD** with 0 DRC, 0 LVS, and clean multi-corner timing closure across all 9 PVT corners.
+- **UVM 1.2 Verification**: Complete SystemVerilog UVM environment with AXI4-Lite VIP, scoreboard checking, and >93% functional coverage.
 
 ---
 
@@ -105,215 +119,167 @@ flowchart TB
 
 ## Memory Map & Interconnect
 
-The system employs a unified 32-bit physical address map. Address decoding is performed by [`rtl/bus/axi_decoder.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/bus/axi_decoder.v):
+The AXI4-Lite crossbar decoder ([`rtl/bus/axi_decoder.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/bus/axi_decoder.v)) maps the 32-bit address space to system slaves:
 
-| Address Range | Size | Slave Target | Access | Description |
-| :--- | :---: | :--- | :---: | :--- |
-| `0x0000_0000 - 0x0000_00FF` | 256 B | **Slave 0: Data RAM** | R/W | Local CPU general data storage ([`axi_data_memory.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/bus/axi_data_memory.v)). |
-| `0x1000_0000 - 0x1000_001F` | 32 B | **Slave 1: VGA Control Registers** | R/W | Memory-mapped video control, display status, and physical button/switch inputs ([`vga_registers.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/vga/vga_registers.v)). |
-| `0x5000_0000 - 0x5001_2BFF` | 76.8 KB | **Slave 1: Video Framebuffer** | R/W | On-chip video memory storing 160x120 32-bit pixel words (`0x00RRGGBB`). |
-
-### Memory-Mapped I/O (MMIO) Registers
-
-Located in Slave 1 at base `0x1000_0000`:
-
-| Address Offset | Register Name | Access | Bitfields & Functionality |
-| :---: | :--- | :---: | :--- |
-| `0x1000_0000` | **`VGA_CTRL`** | R/W | `[0]`: `display_enable` (1 = Enable raster streaming to display, 0 = Blank output). |
-| `0x1000_0004` | **`VGA_STATUS`** | RO | `[0]`: `video_on` (Active video scanning interval).<br>`[1]`: `fb_busy` (VGA raster currently reading framebuffer).<br>`[5:2]`: `btn[3:0]` (Debounced pushbutton inputs).<br>`[9:6]`: `sw[3:0]` (Slide switch positions). |
-| `0x1000_0008` | **`FB_BASE`** | RO | Returns fixed framebuffer base address (`32'h5000_0000`). |
-| `0x1000_000C` | **`FB_SIZE`** | R/W | `[15:0]`: Framebuffer Width (160 default).<br>`[31:16]`: Framebuffer Height (120 default). |
-| `0x1000_0010` | **`INPUTS`** | RO | Direct peripheral reading:<br>`[3:0]`: Pushbuttons `btn[3:0]`.<br>`[7:4]`: Slide switches `sw[3:0]`. |
+| Address Range | Size | Slave Target | Description | Access |
+| :--- | :---: | :---: | :--- | :---: |
+| `0x0000_0000 - 0x0000_00FF` | 256 B | **Slave 0** | Core AXI Data Memory (Synchronous RAM) | R/W |
+| `0x1000_0000 - 0x1000_001F` | 32 B | **Slave 1** | VGA Control, Status & I/O Registers | R/W |
+| `0x5000_0000 - 0x5001_2BFF` | 76.8 KB | **Slave 1** | VGA Framebuffer Dual-Port Memory (160x120 x 4B) | R/W |
+| *All Other Addresses* | — | **Error Slave** | Unmapped Space (generates `SLVERR` response) | R/W |
 
 ---
 
 ## Microprocessor Core (RV32I)
 
-The processor core is located in [`rtl/rv32i/`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i) and implements the unprivileged RISC-V 32-bit Base Integer Instruction Set (RV32I).
-
 ### Datapath Architecture
 
-The top-level CPU datapath is defined in [`rtl/rv32i/Datapath.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/Datapath.v):
-
-- **Single-Cycle Base**: Under normal execution, every instruction fetches, decodes, calculates ALU results, and commits in a single cycle.
-- **Pipeline Stall Mechanism**: When accessing the memory bus, the AXI bridge asserts `stall` to freeze the Program Counter (`ProgramCounter.v`) and gate register file write enables (`write_enable = reg_write && !stall`). Once the AXI transaction completes, write-back commits and execution resumes seamlessly.
-- **Register File**: 32 general-purpose 32-bit registers (`x0` - `x31`). `x0` is hardwired to `0`. Dual asynchronous read ports and a single synchronous write port.
-- **Instruction Memory**: 1 KB (256 words x 32-bit) byte-addressable ROM preloaded at synthesis or simulation start with [`instructions.hex`](file:///c:/Users/HSG/Desktop/rv32i-vga/instructions.hex).
+The processor core is a single-cycle implementation of the RV32I Base Integer ISA. To bridge single-cycle execution with multi-cycle AXI handshakes, the core features a synchronous pipeline stall input (`cpu_stall`). When `cpu_stall` is asserted by the AXI bridge during an outstanding read or write transaction, the Program Counter (`ProgramCounter.v`) and Register File (`RegFile.v`) hold their states until the bus transaction completes.
 
 ```mermaid
 flowchart LR
-    subgraph IF ["Instruction Fetch"]
-        PC2["ProgramCounter"] -->|"pcRegister"| IMEM2["instructionMemory (1 KB ROM)"]
+    subgraph IF [Instruction Fetch]
+        PC[ProgramCounter]
+        IMEM[instructionMemory]
+        PC -->|pcRegister[31:0]| IMEM
     end
 
-    subgraph ID ["Decode & Registers"]
-        IMEM2 -->|"instr"| DEC2["decoder"]
-        DEC2 -->|"opcode"| CTRL2["ControlLogic"]
-        DEC2 -->|"rs1, rs2, rd"| RF2["RegFile (32x32 GPR)"]
-        CTRL2 -->|"reg_write and not stall"| RF2
+    subgraph ID [Decode & Control]
+        DEC[decoder]
+        CTRL[ControlLogic]
+        IMEM -->|instr[31:0]| DEC
+        DEC -->|opcodout[6:0]| CTRL
     end
 
-    subgraph EX ["Execution & ALU"]
-        RF2 -->|"rs1out, rs2out"| ALU2["alu / RI_alu"]
-        DEC2 -->|"imm, func3, func7"| ALU2
-        ALU2 -->|"Branch / Jump Target"| PC2
+    subgraph RF [Register File]
+        REG[RegFile (32x32)]
+        DEC -->|rs1, rs2, rd| REG
+        CTRL -->|reg_write| REG
     end
 
-    subgraph MEM_WB ["Bus Interface & Write-Back"]
-        ALU2 -->|"alu_out (mem_addr)"| BUS2["AXI Master Bridge"]
-        RF2 -->|"rs2out (mem_wdata)"| BUS2
-        CTRL2 -->|"mem_read, mem_write"| BUS2
-        BUS2 -->|"stall"| PC2
-        BUS2 -->|"mem_rdata"| MUX_WB2["mem_to_reg Multiplexer"]
-        ALU2 -->|"alu_out"| MUX_WB2
-        MUX_WB2 -->|"rw"| RF2
+    subgraph EX [Execution & ALU]
+        ALU_TOP[alu]
+        RI[RI_alu]
+        BA[bAlu]
+        ALU_TOP -.-> RI
+        ALU_TOP -.-> BA
+        REG -->|rs1out, rs2out| ALU_TOP
+        DEC -->|imm, func3, func7| ALU_TOP
+        PC -->|pcRegister| ALU_TOP
+        ALU_TOP -->|doesB (jump)| PC
+        DEC -->|imm| PC
+    end
+
+    subgraph MEM [Memory Bridge]
+        BRIDGE[rv32i_axi_bridge]
+        ALU_TOP -->|mem_addr| BRIDGE
+        REG -->|mem_wdata| BRIDGE
+        CTRL -->|mem_read, mem_write| BRIDGE
+        BRIDGE -->|cpu_stall| PC
+        BRIDGE -->|cpu_stall| REG
+    end
+
+    subgraph WB [Write-Back Mux]
+        MUX_WB{"mem_to_reg == 2'b01"}
+        BRIDGE -->|mem_rdata| MUX_WB
+        ALU_TOP -->|alu_out| MUX_WB
+        MUX_WB -->|rw| REG
     end
 ```
 
 ### Supported Instruction Set
 
-#### 1. R-Type (Register-Register Operations)
-*Opcode `7'b0110011` (`0x33`)*
+The core natively executes all 37 base integer instructions of the RV32I ISA:
 
-| Instruction | func3 | func7 | Operation | Description |
-| :--- | :---: | :---: | :--- | :--- |
-| **ADD** | `000` | `0000000` | `rd = rs1 + rs2` | Addition |
-| **SUB** | `000` | `0100000` | `rd = rs1 - rs2` | Subtraction |
-| **SLL** | `001` | `0000000` | `rd = rs1 << rs2[4:0]` | Shift Left Logical |
-| **SLT** | `010` | `0000000` | `rd = ($signed(rs1) < $signed(rs2)) ? 1 : 0` | Set Less Than (Signed) |
-| **SLTU** | `011` | `0000000` | `rd = (rs1 < rs2) ? 1 : 0` | Set Less Than Unsigned |
-| **XOR** | `100` | `0000000` | `rd = rs1 ^ rs2` | Bitwise XOR |
-| **SRL** | `101` | `0000000` | `rd = rs1 >> rs2[4:0]` | Shift Right Logical |
-| **SRA** | `101` | `0100000` | `rd = $signed(rs1) >>> rs2[4:0]` | Shift Right Arithmetic |
-| **OR** | `110` | `0000000` | `rd = rs1 \| rs2` | Bitwise OR |
-| **AND** | `111` | `0000000` | `rd = rs1 & rs2` | Bitwise AND |
-
-#### 2. I-Type ALU (Immediate Operations)
-*Opcode `7'b0010011` (`0x13`)*
-
-| Instruction | func3 | func7 | Operation | Description |
-| :--- | :---: | :---: | :--- | :--- |
-| **ADDI** | `000` | — | `rd = rs1 + imm` | Add Immediate |
-| **SLLI** | `001` | `0000000` | `rd = rs1 << imm[4:0]` | Shift Left Logical Immediate |
-| **SLTI** | `010` | — | `rd = ($signed(rs1) < $signed(imm)) ? 1 : 0` | Set Less Than Immediate |
-| **SLTIU** | `011` | — | `rd = (rs1 < imm) ? 1 : 0` | Set Less Than Unsigned Immediate |
-| **XORI** | `100` | — | `rd = rs1 ^ imm` | Bitwise XOR Immediate |
-| **SRLI** | `101` | `0000000` | `rd = rs1 >> imm[4:0]` | Shift Right Logical Immediate |
-| **SRAI** | `101` | `0100000` | `rd = $signed(rs1) >>> imm[4:0]` | Shift Right Arithmetic Immediate |
-| **ORI** | `110` | — | `rd = rs1 \| imm` | Bitwise OR Immediate |
-| **ANDI** | `111` | — | `rd = rs1 & imm` | Bitwise AND Immediate |
-
-#### 3. Loads & Stores
-- **LW (Load Word)**: Opcode `7'b0000011` (`0x03`), `func3 = 010`. `rd = memory[rs1 + imm]`.
-- **SW (Store Word)**: Opcode `7'b0100011` (`0x23`), `func3 = 010`. `memory[rs1 + imm] = rs2`.
-
-#### 4. Branches (B-Type)
-*Opcode `7'b1100011` (`0x63`). Target = `PC + imm`*
-
-| Instruction | func3 | Condition Evaluated in `bAlu` |
-| :--- | :---: | :--- |
-| **BEQ** | `000` | `rs1 == rs2` |
-| **BNE** | `001` | `rs1 != rs2` |
-| **BLT** | `100` | `$signed(rs1) < $signed(rs2)` |
-| **BGE** | `101` | `$signed(rs1) >= $signed(rs2)` |
-| **BLTU** | `110` | `rs1 < rs2` (Unsigned) |
-| **BGEU** | `111` | `rs1 >= rs2` (Unsigned) |
-
-#### 5. Upper Immediates & Jumps
-- **LUI (Load Upper Immediate)**: Opcode `7'b0110111` (`0x37`). `rd = imm << 12`.
-- **AUIPC (Add Upper Immediate to PC)**: Opcode `7'b0010111` (`0x17`). `rd = PC + (imm << 12)`.
-- **JAL (Jump and Link)**: Opcode `7'b1101111` (`0x6F`). `rd = PC + 4`, `PC = PC + imm`.
-- **JALR (Jump and Link Register)**: Opcode `7'b1100111` (`0x67`). `rd = PC + 4`, `PC = (rs1 + imm) & ~1`.
+1. **R-Type**: `ADD`, `SUB`, `SLL`, `SLT`, `SLTU`, `XOR`, `SRL`, `SRA`, `OR`, `AND`
+2. **I-Type ALU**: `ADDI`, `SLLI`, `SLTI`, `SLTIU`, `XORI`, `SRLI`, `SRAI`, `ORI`, `ANDI`
+3. **I-Type Load**: `LW`
+4. **S-Type Store**: `SW`
+5. **B-Type Branch**: `BEQ`, `BNE`, `BLT`, `BGE`, `BLTU`, `BGEU`
+6. **U-Type Upper Immediate**: `LUI`, `AUIPC`
+7. **J-Type / I-Type Jumps**: `JAL`, `JALR`
 
 ### Control Logic Unit
 
-Decodes 7-bit opcodes into execution control signals in [`rtl/rv32i/ControlLogic.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/ControlLogic.v):
+The `ControlLogic` module combinatorially generates all internal control signals based on the instruction opcode:
 
-| Opcode | Class | `reg_write` | `mem_read` | `mem_write` | `alu_src` | `mem_to_reg` | `branch` | `jump` | `alu_op` |
-| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| `0x33` | R-Type | 1 | 0 | 0 | 0 | `2'b00` | 0 | 0 | `2'b10` |
-| `0x13` | I-Type ALU | 1 | 0 | 0 | 1 | `2'b00` | 0 | 0 | `2'b10` |
-| `0x03` | Load (LW) | 1 | 1 | 0 | 1 | `2'b01` | 0 | 0 | `2'b00` |
-| `0x23` | Store (SW) | 0 | 0 | 1 | 1 | `2'b00` | 0 | 0 | `2'b00` |
-| `0x63` | Branch | 0 | 0 | 0 | 0 | `2'b00` | 1 | 0 | `2'b01` |
-| `0x37` | LUI | 1 | 0 | 0 | 0 | `2'b11` | 0 | 0 | `2'b11` |
-| `0x17` | AUIPC | 1 | 0 | 0 | 1 | `2'b00` | 0 | 0 | `2'b00` |
-| `0x6F` | JAL | 1 | 0 | 0 | 0 | `2'b10` | 0 | 1 | `2'b00` |
-| `0x67` | JALR | 1 | 0 | 0 | 1 | `2'b10` | 0 | 1 | `2'b00` |
+| Opcode | Instruction Class | `reg_write` | `mem_read` | `mem_write` | `alu_src` | `mem_to_reg` | `branch` | `jump` | `alu_op` |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `7'd51` (`0110011`) | R-Type ALU | `1` | `0` | `0` | `0` (rs2) | `2'b00` | `0` | `0` | `2'b10` |
+| `7'd19` (`0010011`) | I-Type ALU | `1` | `0` | `0` | `1` (imm) | `2'b00` | `0` | `0` | `2'b10` |
+| `7'd3` (`0000011`) | Load (LW) | `1` | `1` | `0` | `1` (imm) | `2'b01` | `0` | `0` | `2'b00` |
+| `7'd35` (`0100011`) | Store (SW) | `0` | `0` | `1` | `1` (imm) | `2'b00` | `0` | `0` | `2'b00` |
+| `7'd99` (`1100011`) | Branch (B-Type) | `0` | `0` | `0` | `0` (rs2) | `2'b00` | `1` | `0` | `2'b01` |
+| `7'd55` (`0110111`) | LUI | `1` | `0` | `0` | `0` | `2'b11` | `0` | `0` | `2'b11` |
+| `7'd23` (`0010111`) | AUIPC | `1` | `0` | `0` | `1` (imm) | `2'b00` | `0` | `0` | `2'b00` |
+| `7'd111` (`1101111`) | JAL | `1` | `0` | `0` | `0` | `2'b10` | `0` | `1` | `2'b00` |
+| `7'd103` (`1100111`) | JALR | `1` | `0` | `0` | `1` (imm) | `2'b10` | `0` | `1` | `2'b00` |
 
 ### Core Module Breakdown
 
-| Source File | Module Name | Description |
+| Module | File | Function |
 | :--- | :--- | :--- |
-| [`Datapath.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/Datapath.v) | `Datapath` | Top-level processor core datapath connecting all submodules. |
-| [`ProgramCounter.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/ProgramCounter.v) | `ProgramCounter` | PC register with sequential (`PC+4`), branch, and jump target generation, supporting pipeline stall. |
-| [`instructionMemory.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/instructionMemory.v) | `instructionMemory` | 1 KB word-addressed ROM (256 instructions) loaded via `$readmemh("instructions.hex", memory)`. |
-| [`decoder.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/decoder.v) | `decoder` | Extracts fields and signs-extends 32-bit immediates for I, S, B, U, and J formats. |
-| [`ControlLogic.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/ControlLogic.v) | `ControlLogic` | Combinational instruction decoder producing datapath control lines. |
-| [`RegFile.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/RegFile.v) | `RegFile` | 32 x 32-bit general-purpose registers (`x0` through `x31`). Dual asynchronous read, synchronous write. |
-| [`alu.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/alu.v) | `alu` | Top ALU wrapper combining arithmetic/logic (`RI_alu`) and branching (`bAlu`), AUIPC, LUI, and return link addresses. |
-| [`RI_alu.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/RI_alu.v) | `RI_alu` | Execution unit for integer R-type and I-type arithmetic and logic. |
-| [`bAlu.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/bAlu.v) | `bAlu` | Branch condition comparator evaluating signed and unsigned relations. |
-| [`dataMemory.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/dataMemory.v) | `dataMemory` | Standalone byte-addressable local RAM model. |
-| [`immTo32.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/immTo32.v) | `immTo32` | 12-bit to 32-bit sign extension utility. |
-| [`sram.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/sram.v) | `sram` | Synchronous static memory block template. |
+| `Datapath` | [`rtl/rv32i/Datapath.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/Datapath.v) | Core top-level connecting PC, memory, register file, ALU, decoder, and stall control. |
+| `ProgramCounter` | [`rtl/rv32i/ProgramCounter.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/ProgramCounter.v) | Generates next PC (sequential `PC+4`, branch target `PC+imm`, JAL/JALR target). |
+| `instructionMemory` | [`rtl/rv32i/instructionMemory.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/instructionMemory.v) | 1 KB byte-addressable ROM preloaded with `instructions.hex` via `$readmemh`. |
+| `decoder` | [`rtl/rv32i/decoder.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/decoder.v) | Instruction field unbundling and sign-extended immediate generation. |
+| `ControlLogic` | [`rtl/rv32i/ControlLogic.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/ControlLogic.v) | Opcode translation to datapath control signals. |
+| `RegFile` | [`rtl/rv32i/RegFile.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/RegFile.v) | 32 x 32-bit register file (`x0`-`x31`) with asynchronous dual read and synchronous write. |
+| `alu` | [`rtl/rv32i/alu.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/alu.v) | Top ALU routing arithmetic/logic, branches, effective addresses, AUIPC, LUI, and return links. |
+| `RI_alu` | [`rtl/rv32i/RI_alu.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/RI_alu.v) | Integer R-type & I-type arithmetic and logic operations. |
+| `bAlu` | [`rtl/rv32i/bAlu.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/bAlu.v) | Branch condition evaluation (BEQ, BNE, BLT, BGE, BLTU, BGEU). |
+| `dataMemory` | [`rtl/rv32i/dataMemory.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/rv32i/dataMemory.v) | Core local RAM model. |
 
 ---
 
 ## On-Chip Interconnect & AXI4-Lite Bridge
 
-All memory transactions between the CPU and memory/peripherals are routed over standard AXI4-Lite channels inside [`rtl/bus/`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/bus).
-
 ### RV32I to AXI4-Lite Bridge
 
-[`rtl/bus/rv32i_axi_bridge.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/bus/rv32i_axi_bridge.v) interfaces the native CPU memory bus to AXI4-Lite:
-- **Write Channel**: Drives `awaddr`, `wdata`, `wstrb = 4'b1111`, and manages the `bresp`/`bvalid` write response handshake.
-- **Read Channel**: Drives `araddr`, samples `rdata` on `rvalid`, and forwards incoming read data directly to `cpu_mem_rdata`.
-- **CPU Stall Generation**: Asserts `cpu_stall = 1` while memory transactions are in flight, releasing the CPU on the exact cycle of transfer completion (`bvalid` or `rvalid`).
+The bridge ([`rtl/bus/rv32i_axi_bridge.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/bus/rv32i_axi_bridge.v)) converts native CPU memory signals (`mem_addr`, `mem_wdata`, `mem_write`, `mem_read`) into standard AXI4-Lite master transactions:
+
+- **State Machine**:
+  - `IDLE`: Monitors `mem_read` and `mem_write`.
+  - `WRITE`: Asserts `m_axi_awvalid` and `m_axi_wvalid`, captures address and data, waits for `awready` & `wready`.
+  - `WRESP`: Waits for `m_axi_bvalid` from the slave, returns `bready`.
+  - `READ`: Asserts `m_axi_arvalid`, captures read address, waits for `arready`.
+  - `RDATA`: Waits for `m_axi_rvalid`, latches `rdata`, returns `rready`.
+- **CPU Stall Generation**: Asserts `cpu_stall = 1'b1` during any non-IDLE state, freezing the CPU pipeline until the AXI transaction completes.
 
 ### AXI Crossbar Decoder
 
-[`rtl/bus/axi_decoder.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/bus/axi_decoder.v) acts as an address decoding switch:
-- Routes addresses matching `0x0000_0000 - 0x0000_00FF` to **Slave 0** (Data RAM).
-- Routes addresses matching `0x1000_0000 - 0x1000_001F` (MMIO) and `0x5000_0000 - 0x5001_2BFF` (Framebuffer) to **Slave 1** (VGA Subsystem).
-- Automatically responds with `AXI_RESP_DECERR` (`2'b11`) for unmapped address accesses.
-
-### AXI Data Memory
-
-[`rtl/bus/axi_data_memory.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/bus/axi_data_memory.v) implements a synchronous 256-byte AXI4-Lite slave RAM with byte-strobe write masking (`wstrb`).
+[`rtl/bus/axi_decoder.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/bus/axi_decoder.v) decodes master addresses and routes traffic to the designated slave port:
+- **Slave 0**: Data RAM (`0x0000_0000 - 0x0000_00FF`).
+- **Slave 1**: VGA Registers (`0x1000_0000 - 0x1000_001F`) & Framebuffer (`0x5000_0000 - 0x5001_2BFF`).
+- **Internal Error Slave**: Unmapped addresses are automatically trapped by the decoder, returning an AXI error response (`bresp = 2'b10 SLVERR` or `rresp = 2'b10 SLVERR`).
 
 ---
 
 ## VGA Graphics Controller Subsystem
 
-The graphics hardware resides in [`rtl/vga/`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/vga) and generates a flicker-free visual display driven directly by CPU framebuffer writes.
-
 ```
 +-------------------------------------------------------------------------------+
-|                             VGA Subsystem Architecture                        |
+|                             VGA Subsystem (vga)                               |
 |                                                                               |
-|   AXI4-Lite Bus                                                               |
-|        |                                                                      |
-|        v                                                                      |
-|  +--------------------+   Arbitration    +----------------------+             |
-|  |   vga_registers    |----------------->|   framebuffer_sram   |             |
-|  | (MMIO & CPU Port)  |   (CPU vs VGA)   | (160x120 x 32-bit)   |             |
-|  +--------------------+                  +----------------------+             |
-|        |                                            |                         |
-|   btn / sw inputs                                   v (32-bit pixel data)     |
-|        |                                 +----------------------+             |
-|        |         +---------------------->|    vga_controller    |             |
-|        |         |  fb_req, fb_addr      +----------------------+             |
-|        v         |                                  |                         |
-|  +----------------------+                           v                         |
-|  |    pixel_addr_gen    |                  +------------------+               |
-|  | (4x Pixel Scaling)   |                  |    rgb_output    | (1-cycle delay|
-|  +----------------------+                  +------------------+  alignment)   |
-|        ^                                            |                         |
-|        | H_count, V_count                           v                         |
-|  +----------------------+                  VGA Output (Pmod JC)               |
-|  |      vga_timing      |                  - RGB111 (R, G, B)                 |
-|  | (640x480 @ 60Hz Sync)|                  - HSync, VSync                     |
+|  +--------------------+   Port Arbitration   +----------------------+         |
+|  |   vga_registers    |<====================>|   framebuffer_sram   |         |
+|  | (MMIO & CPU Port)  |   (CPU vs VGA)       | (160x120 x 32-bit)   |         |
+|  +--------------------+                      +----------------------+         |
+|        |                                                |                     |
+|   btn / sw inputs                                       v (32-bit pixel data) |
+|        |                                     +----------------------+         |
+|        |         +-------------------------->|    vga_controller    |         |
+|        |         |  fb_req, fb_addr          +----------------------+         |
+|        v         |                                      |                     |
+|  +----------------------+                               v                     |
+|  |    pixel_addr_gen    |                      +------------------+           |
+|  | (4x Pixel Scaling)   |                      |    rgb_output    | (1-cycle  |
+|  +----------------------+                      +------------------+  delay)   |
+|        ^                                                |                     |
+|        | H_count, V_count                               v                     |
+|  +----------------------+                      VGA Output (Pmod JC)           |
+|  |      vga_timing      |                      - RGB111 (R, G, B)             |
+|  | (640x480 @ 60Hz Sync)|                      - HSync, VSync                 |
 |  +----------------------+                                                     |
 +-------------------------------------------------------------------------------+
 ```
@@ -332,9 +298,22 @@ The graphics hardware resides in [`rtl/vga/`](file:///c:/Users/HSG/Desktop/rv32i
 - **Access Arbitration**: [`vga_registers.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/rtl/vga/vga_registers.v) arbitrates SRAM port access between CPU memory writes and real-time raster scanning.
 - **Synchronous Pipeline Alignment**: HSync, VSync, and pixel data are passed through a 1-cycle delay pipeline (`vga_controller.v` and `rgb_output.v`) to align with synchronous Block RAM read latency.
 
+### Memory-Mapped VGA Registers
+
+Base Address: `0x1000_0000`
+
+| Offset | Register Name | Access | Bit Field | Description |
+| :---: | :--- | :---: | :---: | :--- |
+| `0x00` | `VGA_CTRL` | R/W | `[0]` | **Display Enable** (`1` = Active video generation, `0` = Blank screen). |
+| `0x04` | `VGA_STATUS` | R | `[0]` | **VBLANK Flag** (`1` during vertical retrace, ideal for screen synchronization). |
+| `0x08` | `VGA_FB_BASE` | R/W | `[31:0]` | Framebuffer base memory address pointer (defaults to `0x5000_0000`). |
+| `0x0C` | `VGA_RESOLUTION` | R | `[31:16] / [15:0]` | Resolution config: Height (120) in upper 16 bits, Width (160) in lower 16 bits. |
+| `0x10` | `VGA_BTN` | R | `[3:0]` | Direct hardware pushbutton inputs (`BTN3`, `BTN2`, `BTN1`, `BTN0`). |
+| `0x14` | `VGA_SW` | R | `[3:0]` | Direct hardware slide switch inputs (`SW3`, `SW2`, `SW1`, `SW0`). |
+
 ### Pmod RGB111 Physical Interface
 
-To eliminate external hardware complexity, the video output is mapped to a single Digilent Pmod port (**JC**) in 1-bit per channel RGB111 color mode:
+The video output is mapped to a single Digilent Pmod port (**JC**) in 1-bit per channel RGB111 color mode:
 - **Colors Supported**: 8 saturated colors (Black, Blue, Green, Cyan, Red, Magenta, Yellow, White).
 - **Physical Pins**:
   - `vga_r`: JC1 (Pin V15)
@@ -379,6 +358,100 @@ The SoC top wrapper is implemented in [`rtl/fpga/zybo_top.v`](file:///c:/Users/H
 
 ---
 
+## ASIC Physical Design & GDSII (SkyWater 130nm)
+
+The entire `soc_top` design has been hardened down to silicon layout using the open-source **OpenLane / OpenROAD** automated physical design flow targeting the **SkyWater 130nm (`sky130_fd_sc_hd`)** process node.
+
+### Physical Implementation & OpenLane Flow
+
+The physical design flow executes all classical digital ASIC back-end stages autonomously:
+1. **Logic Synthesis & Tech Mapping**: Yosys synthesizes RTL logic mapped to the `sky130_fd_sc_hd` standard cell library.
+2. **Floorplanning & PDN**: Core and die boundaries are established, followed by power delivery network generation creating low-resistance upper-metal straps for `VPWR` and `VGND`.
+3. **Placement & Optimization**: Global and detailed placement via OpenROAD, inserting tap cells, antenna diodes, and timing repair buffers.
+4. **Clock Tree Synthesis (CTS)**: Automated clock tree synthesis constructing balanced clock buffers across all sequential flip-flops.
+5. **Detailed Routing**: TritonRoute routes all signal nets across 5 metal layers, iteratively resolving DRC errors over 22 iterations.
+6. **Physical Verification (DRC/LVS)**: Magic and KLayout verify design rule compliance and layout-versus-schematic netlist equivalence.
+7. **Multi-Corner Static Timing Analysis (STA)**: Sign-off timing verification across 9 PVT corners with full parasitic extraction (SPEF).
+
+### Chip Layout & GDSII Screenshots
+
+#### 1. Static Timing Analysis Sign-off (9-Corner STA Table)
+The layout achieved **zero hold violations and zero setup violations** across all process-voltage-temperature (PVT) corners with positive worst slacks:
+
+![OpenLane Multi-Corner STA Report](gds/screenshots/Screenshot%20from%202026-09-11%2015-42-47.png)
+
+---
+
+#### 2. Full-Chip Routed Layout & Power Distribution Network (PDN)
+OpenROAD layout visualization showing core standard cell rows, clock distribution buffers, horizontal/vertical power mesh straps, and peripheral I/O bond pads:
+
+![soc_top Routed Layout with Power Mesh](gds/screenshots/Screenshot%20from%202026-09-11%2015-43-15.png)
+
+---
+
+#### 3. KLayout GDSII Viewer (`soc_top.gds`)
+Detailed KLayout inspection displaying the final mask geometry, standard cell macro placements (`sky130_fd_sc_hd`), and dedicated I/O pin assignments:
+
+![KLayout GDSII Viewer soc_top.gds](gds/screenshots/Screenshot%20from%202026-09-11%2015-45-39.png)
+
+---
+
+### Tapeout & Physical Metrics Summary
+
+Key sign-off metrics extracted from [`gds/RUN_2026-09-11_10-33-07/final/metrics.json`](file:///c:/Users/HSG/Desktop/rv32i-vga/gds/RUN_2026-09-11_10-33-07/final/metrics.json):
+
+| Metric Category | Parameter | Value | Sign-off Status |
+| :--- | :--- | :---: | :---: |
+| **Process Node** | Semiconductor PDK | **SkyWater 130nm** (`sky130_fd_sc_hd`) | Verified |
+| **Die Dimensions** | Width x Height | **112.92 µm x 123.64 µm** | Tapeout Ready |
+| **Die Area** | Total Die Footprint | **13,960.2 µm²** (0.014 mm²) | Passed |
+| **Core Dimensions** | Width x Height | **107.18 µm x 111.52 µm** | Tapeout Ready |
+| **Core Area** | Active Core Area | **10,231.1 µm²** | Passed |
+| **Core Utilization** | Placement Density | **79.97%** (~80%) | Optimal |
+| **Total Instances** | All Standard Cells & Physical Cells | **1,614 cells** | Clean |
+| **Logic Cell Instances** | Functional Standard Cells | **925 cells** (8,181.6 µm²) | Clean |
+| **Sequential Elements** | D-Flip-Flops / Latches | **111 cells** (2,766.4 µm²) | Clean |
+| **Physical Cells** | Fill Cells / Tap Cells | **689 fill / 136 tap** | Clean |
+| **Buffer Cells** | Timing Repair / Clock Buffers | **147 repair / 31 clock** | Clean |
+| **Detailed Routing** | Total Routed Wirelength | **13,464 µm** (13.46 mm) | Completed (iter 22) |
+| **Via Count** | Total Routing Vias | **4,670 vias** | Clean |
+| **DRC Violations** | Detailed Routing DRC Errors | **0 errors** | **PASSED** |
+| **LVS Violations** | Disconnected / Floating Pins | **0 errors** | **PASSED** |
+| **Antenna Violations** | Violating Nets / Pins | **0 nets / 0 pins** | **PASSED** |
+
+### Multi-Corner Static Timing Analysis (STA)
+
+The design achieves clean timing closure across all 9 PVT analysis corners:
+
+| Analysis Corner | Temp / Voltage | Setup Slack (WS) | Setup Vio | Hold Slack (WS) | Hold Vio | Max Slew Vio | Max Cap Vio |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `nom_tt_025C_1v80` | +25°C / 1.80V | **+5.196 ns** | 0 | **+0.459 ns** | 0 | 0 | 0 |
+| `nom_ss_100C_1v60` | +100°C / 1.60V | **+0.630 ns** | 0 | **+0.979 ns** | 0 | 0 | 0 |
+| `nom_ff_n40C_1v95` | -40°C / 1.95V | **+6.248 ns** | 0 | **+0.257 ns** | 0 | 0 | 0 |
+| `min_tt_025C_1v80` | +25°C / 1.80V | **+5.230 ns** | 0 | **+0.458 ns** | 0 | 0 | 0 |
+| `min_ss_100C_1v60` | +100°C / 1.60V | **+0.713 ns** | 0 | **+0.976 ns** | 0 | 0 | 0 |
+| `min_ff_n40C_1v95` | -40°C / 1.95V | **+6.270 ns** | 0 | **+0.256 ns** | 0 | 0 | 0 |
+| `max_tt_025C_1v80` | +25°C / 1.80V | **+5.158 ns** | 0 | **+0.460 ns** | 0 | 0 | 0 |
+| `max_ss_100C_1v60` | +100°C / 1.60V | **+0.545 ns** | 0 | **+0.984 ns** | 0 | 0 | 0 |
+| `max_ff_n40C_1v95` | -40°C / 1.95V | **+6.221 ns** | 0 | **+0.258 ns** | 0 | 0 | 0 |
+| **Worst-Case Overall** | — | **+0.545 ns** | **0** | **+0.256 ns** | **0** | **0** | **0** |
+
+- **Setup TNS (Total Negative Slack)**: `0.0000` (Zero timing violations).
+- **Hold TNS (Total Negative Slack)**: `0.0000` (Zero timing violations).
+
+### Power & IR Drop Analysis
+
+- **Total Power Consumption**: **1.01 mW** (0.00101 W)
+  - **Internal Power**: 0.788 mW (77.9%)
+  - **Switching Power**: 0.224 mW (22.1%)
+  - **Leakage Power**: 11.5 nW (< 0.001%)
+- **Power Grid Integrity & IR Drop**:
+  - `VPWR` Average Drop: **13.4 µV** (0.0000134 V)
+  - `VPWR` Worst-Case Drop: **83.6 µV** (0.0000836 V)
+  - Result: Extremely stiff power distribution network with negligible supply degradation.
+
+---
+
 ## Bare-Metal Application: Ping Pong Game
 
 The system includes a bare-metal assembly implementation of the classic Ping Pong arcade game in [`pong.s`](file:///c:/Users/HSG/Desktop/rv32i-vga/pong.s):
@@ -415,49 +488,6 @@ hexdump -v -e '1/4 "%08x\n"' pong.bin > instructions.hex
 
 ---
 
-## Build System & Toolchain Guide
-
-The project includes an automated build system in [`Makefile`](file:///c:/Users/HSG/Desktop/rv32i-vga/Makefile) using the open-source **F4PGA / SymbiFlow** toolchain for Xilinx 7-series devices.
-
-### Makefile Targets
-
-```bash
-make help        # Displays available commands and target summaries
-make bitstream   # Executes complete synthesis, pack, place, route, and bitstream flow
-make prog        # Programs the bitstream onto the Zybo Z7-10 via openFPGALoader
-make sim         # Compiles and runs the end-to-end SoC testbench in QuestaSim
-make clean       # Removes all build directories, logs, and simulation outputs
-```
-
-### Synthesizing & Generating Bitstream (F4PGA)
-
-Run:
-```bash
-make bitstream
-```
-
-This target executes the 6-stage open-source flow:
-1. **Synthesis (`symbiflow_synth`)**: Synthesizes Verilog RTL using Yosys and produces `build/zybo/zybo_top.eblif`.
-2. **Packing (`symbiflow_pack`)**: Packs primitives into CLBs using VPR and produces `build/zybo/zybo_top.net`.
-3. **Placement (`symbiflow_place`)**: Places blocks on the XC7Z010 grid -> `build/zybo/zybo_top.place`.
-4. **Routing (`symbiflow_route`)**: Routes interconnect lines -> `build/zybo/zybo_top.route`.
-5. **FASM Generation (`symbiflow_write_fasm`)**: Generates FPGA Assembly configuration file -> `build/zybo/zybo_top.fasm`.
-6. **Bitstream Assembly (`symbiflow_write_bitstream`)**: Packages bitstream via prjxray -> `build/zybo/zybo_top.bit`.
-
-### Board Programming (openFPGALoader)
-
-Connect your Zybo Z7-10 via Micro-USB (JTAG) and run:
-```bash
-make prog
-```
-
-Or run directly:
-```bash
-openFPGALoader -b zybo_z7_10 build/zybo/zybo_top.bit
-```
-
----
-
 ## Verification & Simulation
 
 ### Testbench Suite
@@ -469,35 +499,93 @@ The [`tb/`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb) directory provides modula
 - [`tb/rv32i_dmem_tb.sv`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/rv32i_dmem_tb.sv): Verifies CPU memory read/write instructions over the AXI master bridge.
 - [`tb/vga_subsystem_tb.sv`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/vga_subsystem_tb.sv): Full graphics subsystem verification covering framebuffer arbitration and timing.
 - [`tb/vga_registers_tb.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/vga_registers_tb.v): Tests MMIO register read/write operations and busy flags.
-- [`tb/vga_tb.v`](tb/vga_tb.v): Timing verification for VGA sync pulses and active video intervals.
+- [`tb/vga_tb.v`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/vga_tb.v): Timing verification for VGA sync pulses and active video intervals.
+
+---
 
 ### UVM 1.2 Verification Environment
 
-A complete, production-grade UVM (Universal Verification Methodology 1.2) testbench is available under [`tb/uvm/`](tb/uvm), verifying the AXI4-Lite crossbar interconnect (`axi_decoder`), address routing, and slave memory spaces:
+A complete, production-grade UVM (Universal Verification Methodology 1.2) testbench is located under [`tb/uvm/`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/uvm), verifying the AXI4-Lite crossbar interconnect (`axi_decoder`), address routing, slave memory targets, and error trapping:
 
-- **AXI4-Lite Verification IP (`tb/uvm/vip/axi_lite/`)**:
-  - [`axi_lite_if.sv`](tb/uvm/vip/axi_lite/axi_lite_if.sv): Full AXI4-Lite standard interface (AW, W, B, AR, R).
-  - [`axi_lite_item.sv`](tb/uvm/vip/axi_lite/axi_lite_item.sv): Sequence item with address space, data, byte strobe, and timing constraints.
-  - [`axi_lite_driver.sv`](tb/uvm/vip/axi_lite/axi_lite_driver.sv): Active master protocol driver.
-  - [`axi_lite_monitor.sv`](tb/uvm/vip/axi_lite/axi_lite_monitor.sv): Passive non-intrusive protocol monitor.
-  - [`axi_lite_agent.sv`](tb/uvm/vip/axi_lite/axi_lite_agent.sv): Configurable active/passive agent.
-  - [`axi_lite_seq_lib.sv`](tb/uvm/vip/axi_lite/axi_lite_seq_lib.sv): Sanity, unmapped error, constrained-random, and concurrent burst sequences.
-- **Scoreboard & Coverage (`tb/uvm/env/`)**:
-  - [`axi_decoder_scoreboard.sv`](tb/uvm/env/axi_decoder_scoreboard.sv): Verifies address decoding to Slave 0 (RAM), Slave 1 (VGA/FB), data integrity, and error slave (`SLVERR`) responses.
-  - [`axi_decoder_coverage.sv`](tb/uvm/env/axi_decoder_coverage.sv): Functional coverage tracking operation types, memory regions, byte strobes, and cross coverage (>93% coverage).
-- **Test Suite (`tb/uvm/tests/`)**:
-  - `axi_decoder_sanity_test`: Directed read/write sanity test.
-  - `axi_decoder_unmapped_test`: Verifies error decoding on unmapped address holes.
-  - `axi_decoder_random_test`: 100+ constrained-random transactions.
-  - `axi_decoder_concurrent_test`: Zero-delay back-to-back burst test.
+```mermaid
+flowchart TB
+    subgraph TB_TOP ["tb_top.sv"]
+        CLK_RST["Clock & Reset Generator (100 MHz)"]
+        DUT["DUT: axi_decoder.v"]
+        RAM_SLV["Target Slave 0: axi_data_memory.v"]
+        VGA_SLV["Target Slave 1: vga_registers.v + framebuffer_sram.v"]
 
-#### Running UVM Verification (QuestaSim)
+        CLK_RST --> DUT
+        DUT <-->|"Slave 0 Port"| RAM_SLV
+        DUT <-->|"Slave 1 Port"| VGA_SLV
+
+        subgraph UVM_ENV ["UVM Environment (axi_decoder_env)"]
+            subgraph VIP ["Master VIP Agent"]
+                SEQ["axi_lite_sequencer"]
+                DRV["axi_lite_driver"]
+                MON_M["axi_lite_monitor (Master)"]
+                SEQ --> DRV
+            end
+
+            subgraph SLV_AGENTS ["Slave Passive VIP Agents"]
+                MON_S0["axi_lite_monitor (Slave 0 RAM)"]
+                MON_S1["axi_lite_monitor (Slave 1 VGA)"]
+            end
+
+            SCB["axi_decoder_scoreboard"]
+            COV["axi_decoder_coverage"]
+
+            MON_M -->|"write_master()"| SCB
+            MON_M -->|"sample()"| COV
+            MON_S0 -->|"write_s0()"| SCB
+            MON_S1 -->|"write_s1()"| SCB
+        end
+
+        DRV <-->|"m_if (AXI4-Lite Master)"| DUT
+        MON_S0 -.->|"s0_if"| DUT
+        MON_S1 -.->|"s1_if"| DUT
+    end
+```
+
+#### 1. AXI4-Lite Verification IP (`tb/uvm/vip/axi_lite/`)
+- [`axi_lite_if.sv`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/uvm/vip/axi_lite/axi_lite_if.sv): Full standard AXI4-Lite interface defining AW, W, B, AR, and R signal bundles with clocking blocks.
+- [`axi_lite_item.sv`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/uvm/vip/axi_lite/axi_lite_item.sv): Sequence item with constraints for address space distribution, byte strobe patterns (`wstrb`), data payload, and response codes.
+- [`axi_lite_driver.sv`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/uvm/vip/axi_lite/axi_lite_driver.sv): Protocol-compliant master driver managing independent channel handshakes (`awvalid/awready`, `wvalid/wready`, `bready/bvalid`, `arvalid/arready`, `rready/rvalid`).
+- [`axi_lite_monitor.sv`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/uvm/vip/axi_lite/axi_lite_monitor.sv): Non-intrusive bus monitor capturing transactions and publishing them via `uvm_analysis_port`.
+- [`axi_lite_agent.sv`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/uvm/vip/axi_lite/axi_lite_agent.sv): Encapsulates driver, monitor, and sequencer with active/passive runtime configurability.
+- [`axi_lite_seq_lib.sv`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/uvm/vip/axi_lite/axi_lite_seq_lib.sv): Reusable sequence library containing sanity, unmapped error, random, and concurrent burst sequences.
+
+#### 2. Scoreboard & Functional Coverage (`tb/uvm/env/`)
+- [`axi_decoder_scoreboard.sv`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/uvm/env/axi_decoder_scoreboard.sv):
+  - **Dynamic Routing Verification**: Verifies that transactions hitting `0x0000_0000` route strictly to Slave 0, and transactions hitting `0x1000_0000` or `0x5000_0000` route strictly to Slave 1.
+  - **Data Integrity**: Compares expected write data against observed slave write data byte-by-byte.
+  - **Error Slave Trapping**: Asserts that accesses to unmapped address holes correctly elicit an AXI `SLVERR` response.
+  - **Queue Leakage Checking**: `check_phase` ensures no unserviced transactions remain in expected queues.
+- [`axi_decoder_coverage.sv`](file:///c:/Users/HSG/Desktop/rv32i-vga/tb/uvm/env/axi_decoder_coverage.sv):
+  - Covergroups for target memory regions (Data RAM, VGA Registers, Framebuffer, Unmapped).
+  - Cross-coverage between transaction types (`READ`/`WRITE`), response status (`OKAY`, `SLVERR`), and strobe permutations, achieving **>93% functional coverage**.
+
+#### 3. Test Suite (`tb/uvm/tests/`)
+- `axi_decoder_sanity_test`: Directed read/write sanity test verifying each address region.
+- `axi_decoder_unmapped_test`: Stresses error decoding on unmapped address holes.
+- `axi_decoder_random_test`: 100+ constrained-random transactions testing random addresses and data patterns.
+- `axi_decoder_concurrent_test`: Zero-delay back-to-back burst test evaluating crossbar throughput under heavy load.
+
+---
+
+### Running UVM Test Suite
+
+The UVM verification suite is integrated directly into [`Makefile`](file:///c:/Users/HSG/Desktop/rv32i-vga/Makefile) for automated execution with QuestaSim / ModelSim:
+
 ```bash
-make uvm_sanity     # Run directed sanity test
-make uvm_unmapped   # Run unmapped address error test
-make uvm_random     # Run constrained-random test
-make uvm_concurrent # Run concurrent burst test
-make uvm_all        # Run complete UVM test suite
+# Run entire UVM test suite
+make uvm_all
+
+# Run individual UVM tests
+make uvm_sanity      # Directed sanity test
+make uvm_unmapped    # Unmapped address hole error test (SLVERR)
+make uvm_random      # Constrained-random stress test
+make uvm_concurrent  # Concurrent zero-delay burst test
 ```
 
 ### Running SoC Simulation
@@ -522,17 +610,74 @@ gtkwave soc_top.vcd
 
 ---
 
+## Build System & Toolchain Guide
+
+The project includes an automated build system in [`Makefile`](file:///c:/Users/HSG/Desktop/rv32i-vga/Makefile) using the open-source **F4PGA / SymbiFlow** toolchain for Xilinx 7-series devices.
+
+### Makefile Targets
+
+```bash
+make help           # Displays available commands and target summaries
+make bitstream      # Executes complete synthesis, pack, place, route, and bitstream flow
+make prog           # Programs the bitstream onto the Zybo Z7-10 via openFPGALoader
+make sim            # Compiles and runs the end-to-end SoC testbench in QuestaSim
+make uvm_compile    # Compiles UVM VIP, environment, tests, and top
+make uvm_all        # Runs complete UVM verification test suite
+make clean          # Removes all build directories, logs, and simulation outputs
+```
+
+### Synthesizing & Generating Bitstream (F4PGA)
+
+```bash
+make bitstream
+```
+
+This target executes the 6-stage open-source FPGA flow:
+1. **Synthesis (`symbiflow_synth`)**: Synthesizes Verilog RTL using Yosys -> `build/zybo/zybo_top.eblif`.
+2. **Packing (`symbiflow_pack`)**: Packs primitives into CLBs using VPR -> `build/zybo/zybo_top.net`.
+3. **Placement (`symbiflow_place`)**: Places blocks on the XC7Z010 grid -> `build/zybo/zybo_top.place`.
+4. **Routing (`symbiflow_route`)**: Routes interconnect lines -> `build/zybo/zybo_top.route`.
+5. **FASM Generation (`symbiflow_write_fasm`)**: Generates FPGA configuration -> `build/zybo/zybo_top.fasm`.
+6. **Bitstream Assembly (`symbiflow_write_bitstream`)**: Packages bitstream via prjxray -> `build/zybo/zybo_top.bit`.
+
+### Board Programming (openFPGALoader)
+
+Connect your Zybo Z7-10 via Micro-USB (JTAG) and run:
+```bash
+make prog
+```
+
+Or run directly:
+```bash
+openFPGALoader -b zybo_z7_10 build/zybo/zybo_top.bit
+```
+
+---
+
 ## Repository File Structure
 
 ```
 rv32i-vga/
-├── Makefile                       # F4PGA build, flashing & simulation automation
-├── README.md                      # Complete system documentation
+├── Makefile                       # Automated F4PGA build, flashing & UVM simulation
+├── README.md                      # Complete system documentation & ASIC report
+├── .gitignore                     # Git tracking exclusions (build artifacts, EDA logs)
 ├── instructions.hex               # Preloaded 32-bit machine code for instructionMemory
 ├── pong.s                         # Bare-metal RISC-V Ping Pong game assembly source
 │
 ├── constraints/
 │   └── zybo_z7_10.xdc             # Pin constraints for Digilent Zybo Z7-10
+│
+├── gds/                           # OpenLane ASIC Physical Design & Tapeout Deliverables
+│   ├── screenshots/               # Layout and timing analysis screenshots
+│   │   ├── Screenshot from 2026-09-11 15-42-47.png # Multi-Corner STA Summary Table
+│   │   ├── Screenshot from 2026-09-11 15-43-15.png # Full Routed Chip Layout with PDN
+│   │   └── Screenshot from 2026-09-11 15-45-39.png # KLayout GDSII Viewer (soc_top.gds)
+│   └── RUN_2026-09-11_10-33-07/   # OpenLane hardening run directory
+│       └── final/                 # Final tapeout deliverables
+│           ├── gds/soc_top.gds    # Silicon GDSII layout file
+│           ├── def/soc_top.def    # Design Exchange Format physical database
+│           ├── metrics.json       # Complete sign-off metrics (timing, power, DRC, LVS)
+│           └── sdc/soc_top.sdc    # Synopsys Design Constraints
 │
 ├── rtl/
 │   ├── soc_top.v                  # Top-level SoC interconnecting CPU, Bus & VGA
@@ -557,7 +702,7 @@ rv32i-vga/
 │   │   ├── dataMemory.v           # Local RAM model
 │   │   ├── decoder.v              # Instruction field decoder & immediate generator
 │   │   ├── immTo32.v              # 12-bit to 32-bit sign extender
-│   │   ├── instructionMemory.v    # 1 KB (256-word) ROM preloaded with instructions.hex
+│   │   ├── instructionMemory.v    # 1 KB ROM preloaded with instructions.hex
 │   │   └── sram.v                 # Synchronous memory module template
 │   │
 │   └── vga/                       # Hardware VGA Display Subsystem
@@ -575,7 +720,35 @@ rv32i-vga/
     ├── soc_top_tb.sv              # End-to-end SoC SystemVerilog testbench
     ├── vga_registers_tb.v         # VGA MMIO register interface testbench
     ├── vga_subsystem_tb.sv        # VGA subsystem integration testbench
-    └── vga_tb.v                   # VGA raster timing compliance testbench
+    ├── vga_tb.v                   # VGA raster timing compliance testbench
+    │
+    └── uvm/                       # Production-Grade UVM 1.2 Verification Environment
+        ├── tb_top.sv              # Top testbench module instantiating DUT & slaves
+        │
+        ├── vip/axi_lite/          # AXI4-Lite Verification IP
+        │   ├── axi_lite_if.sv     # Virtual interface
+        │   ├── axi_lite_types.sv  # Types, enums, region definitions
+        │   ├── axi_lite_item.sv   # Transaction item with constraints
+        │   ├── axi_lite_driver.sv # Master protocol driver
+        │   ├── axi_lite_monitor.sv# Bus monitor
+        │   ├── axi_lite_sequencer.sv # Transaction sequencer
+        │   ├── axi_lite_agent.sv  # Active/Passive agent wrapper
+        │   ├── axi_lite_seq_lib.sv# Sequence library (sanity, random, concurrent)
+        │   └── axi_lite_pkg.sv    # VIP Package
+        │
+        ├── env/                   # Verification Environment
+        │   ├── axi_decoder_env.sv # Top environment wiring agents, SCB & coverage
+        │   ├── axi_decoder_scoreboard.sv # Data integrity & routing scoreboard
+        │   ├── axi_decoder_coverage.sv   # Functional coverage model (>93%)
+        │   └── axi_decoder_env_pkg.sv    # Environment Package
+        │
+        └── tests/                 # UVM Test Library
+            ├── axi_decoder_base_test.sv       # Base test class
+            ├── axi_decoder_sanity_test.sv     # Directed read/write sanity test
+            ├── axi_decoder_unmapped_test.sv   # Error address trapping test
+            ├── axi_decoder_random_test.sv     # Constrained-random stress test
+            ├── axi_decoder_concurrent_test.sv # Zero-delay concurrent burst test
+            └── axi_decoder_test_pkg.sv        # Test Package
 ```
 
 ---

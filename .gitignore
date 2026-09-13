@@ -2,7 +2,9 @@
 # RV32I-VGA .gitignore
 # ==============================================================================
 
+# ------------------------------------------------------------------------------
 # FPGA Toolchain Build Artifacts & Logs (F4PGA / SymbiFlow / Vivado)
+# ------------------------------------------------------------------------------
 build/**
 !build/**/
 !build/**/*.bit
@@ -18,25 +20,63 @@ build/**
 *.log
 noisy_warnings*
 
-# Simulation Outputs (QuestaSim / ModelSim / Icarus / Verilator)
+# ------------------------------------------------------------------------------
+# ASIC Physical Design & OpenLane Intermediate Run Artifacts
+# ------------------------------------------------------------------------------
+# Ignore all intermediate OpenLane step folders (01-*, 55-*, tmp/, etc.)
+gds/RUN_*/[0-9]*
+gds/RUN_*/tmp/
+openlane/**/runs/
+*.odb
+*.spef
+*.sdf
+*.mag
+*.bb.v
+*.pnl.v
+*.nl.v
+
+# Explicitly keep final GDS, DEF, LEF, metrics, and screenshots
+!gds/screenshots/
+!gds/screenshots/**
+!gds/**/final/
+!gds/**/final/**
+!*.gds
+!*.def
+!*.lef
+
+# ------------------------------------------------------------------------------
+# Simulation Outputs & UVM Logs (QuestaSim / ModelSim / VCS / Icarus / Verilator)
+# ------------------------------------------------------------------------------
 work/
 transcript
 *.wlf
 *.vcd
+*.fsdb
+*.vpd
 *.cr.mti
 *.mpf
 covhtmlreport/
 *.ucdb
+urgReport/
+*.vstf
+novas*
+tr_db*
+simv*
+csrc/
 
 # Raw simulation image dumps
 *.ppm
 
-# Python cache
+# ------------------------------------------------------------------------------
+# Python & Scripting Cache
+# ------------------------------------------------------------------------------
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Editor & OS Artifacts
+# ------------------------------------------------------------------------------
+# Editor & Operating System Artifacts
+# ------------------------------------------------------------------------------
 .vscode/
 .idea/
 *.swp
